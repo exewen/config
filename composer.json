@@ -1,0 +1,43 @@
+{
+    "name": "exewen/config",
+    "description": "A config component for Exewen.",
+    "authors": [
+        {
+            "name": "exewen",
+            "email": "exeweb@163.com"
+        }
+    ],
+    "license": "MIT",
+    "type": "library",
+    "keywords": [
+        "php",
+        "exewen",
+        "config"
+    ],
+    "require": {
+        "php": ">=7.4",
+        "exewen/utils": "*",
+        "symfony/finder": "^5.0"
+    },
+    "require-dev": {
+    },
+    "autoload": {
+        "psr-4": {
+            "Exewen\\Config\\": "src/"
+        }
+    },
+    "autoload-dev": {
+    },
+    "minimum-stability": "dev",
+    "config": {
+        "sort-packages": true
+    },
+    "extra": {
+        "branch-alias": {
+            "dev-master": "1.0.x-dev"
+        },
+        "exewen": {
+            "config": "Exewen\\Config\\ConfigRegister"
+        }
+    }
+}
