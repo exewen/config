@@ -19,6 +19,10 @@ class ConfigProvider
         $this->container = $container;
     }
 
+    /**
+     * 配置注册
+     * @return void
+     */
     public function register()
     {
         $config = $this->getConfig();
