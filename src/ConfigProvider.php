@@ -29,14 +29,19 @@ class ConfigProvider
         $this->container->singleton(ConfigInterface::class, new Config($config));
     }
 
-    public function getConfig()
+    /**
+     * 获取配置
+     * @return array
+     */
+    public function getConfig():array
     {
-        $autoloadConfig = $this->readPath([BASE_PATH_PKG . '/config/exewen']);
-        return array_replace_recursive(LoadConfig::loadComposer(), $autoloadConfig);
+        $autoloadConfig = $this->readPath([BASE_PATH_PKG . '/config/exewen']); // 项目配置
+        $composerConfig = LoadConfig::loadComposer(); // composer extra 配置
+        return array_replace_recursive($composerConfig, $autoloadConfig);
     }
 
     /**
-     * 指定文件配置
+     * 读取指定文件配置
      * @param string $string
      * @return array
      */
@@ -54,7 +59,7 @@ class ConfigProvider
     }
 
     /**
-     * 递归文件读取
+     * 读取项目配置
      * @param array $dirs
      * @return array
      */

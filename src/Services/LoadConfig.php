@@ -20,6 +20,7 @@ class LoadConfig
     public static function loadComposer(): array
     {
         if (!static::$providerConfigs) {
+            // Extra['Extra'=>['exewen'=>'config']] 获取providers
             $providers = Composer::getPackageExtra('exewen')['config'] ?? [];
             static::$providerConfigs = static::loadProviders($providers);
         }
