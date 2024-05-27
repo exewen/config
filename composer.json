@@ -16,7 +16,7 @@
     ],
     "require": {
         "php": ">=7.3",
-        "exewen/utils": "dev-develop",
+        "exewen/utils": "^1.0",
         "symfony/finder": "^5.0"
     },
     "require-dev": {
