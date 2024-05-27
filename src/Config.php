@@ -7,7 +7,8 @@ use Exewen\Config\Contract\ConfigInterface;
 
 class Config implements ConfigInterface
 {
-    protected array $configs = [];
+//    protected array $configs = [];
+    protected $configs = [];
 
 
     public function __construct(array $configs)
@@ -40,7 +41,30 @@ class Config implements ConfigInterface
 
     public function set(string $key, $value)
     {
-        $this->configs[$key] = $value;
+        if (strpos($key, '.') === false) {
+            $this->configs[$key] = $value;
+        } else {
+            // 适配.配置设置
+            $this->setNestedValue($this->configs, $key, $value);
+        }
+    }
+
+    /**
+     * 嵌套修改配置
+     * @param $array
+     * @param $key
+     * @param $value
+     * @return void
+     */
+    protected function setNestedValue($array, $key, $value)
+    {
+        $current = &$array;
+        foreach (explode('.', $key) as $segment) {
+            $current = &$current[$segment];
+        }
+        // 全部匹配进行修改
+        $current = $value;
+        $this->configs = $array;
     }
 
 }

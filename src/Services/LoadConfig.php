@@ -11,7 +11,8 @@ class LoadConfig
      * Providers配置
      * @var array
      */
-    private static array $providerConfigs = [];
+//    private static array $providerConfigs = [];
+    private static $providerConfigs = [];
 
     /**
      * 加载composer配置

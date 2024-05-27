@@ -12,7 +12,8 @@ use Symfony\Component\Finder\Finder;
 class ConfigProvider
 {
 
-    private ContainerInterface $container;
+//    private ContainerInterface $container;
+    private $container;
 
     public function __construct(ContainerInterface $container)
     {

@@ -15,7 +15,7 @@
         "config"
     ],
     "require": {
-        "php": ">=7.4",
+        "php": ">=7.3",
         "exewen/utils": "dev-develop",
         "symfony/finder": "^5.0"
     },
@@ -28,7 +28,7 @@
     },
     "autoload-dev": {
     },
-    "minimum-stability": "dev",
+    "minimum-stability": "stable",
     "config": {
         "sort-packages": true
     },
