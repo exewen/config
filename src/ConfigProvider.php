@@ -6,7 +6,7 @@ namespace Exewen\Config;
 
 use Exewen\Config\Contract\ConfigInterface;
 use Exewen\Config\Services\LoadConfig;
-use Psr\Container\ContainerInterface;
+use Exewen\Utils\Contract\ContainerInterface;
 use Symfony\Component\Finder\Finder;
 
 class ConfigProvider
