@@ -36,7 +36,8 @@ class ConfigProvider
      */
     public function getConfig():array
     {
-        $autoloadConfig = $this->readPath([BASE_PATH_PKG . '/config/exewen']); // 项目配置
+        !defined('BASE_PATH_CONFIG') && define('BASE_PATH_CONFIG', '/config/exewen');
+        $autoloadConfig = $this->readPath([BASE_PATH_PKG . BASE_PATH_CONFIG]); // 项目配置
         $composerConfig = LoadConfig::loadComposer(); // composer extra 配置
         return array_replace_recursive($composerConfig, $autoloadConfig);
     }
